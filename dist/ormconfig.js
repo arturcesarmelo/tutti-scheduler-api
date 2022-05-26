@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const dns = new URL(process.env.DB_URL);
 const config = {
-    type: 'mysql',
-    host: process.env.DB_HOST,
-    port: Number(process.env.DB_PORT),
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
+    type: "postgres",
+    host: dns.hostname,
+    port: Number(dns.port),
+    username: dns.username,
+    password: dns.password,
+    database: dns.pathname,
     entities: [
         __dirname + 'src/**/*.entity{.ts,.js}'
     ],

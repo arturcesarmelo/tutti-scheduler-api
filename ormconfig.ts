@@ -1,12 +1,12 @@
-import { MysqlConnectionOptions } from "typeorm/driver/mysql/MysqlConnectionOptions";
-
-const config: MysqlConnectionOptions = {
-    type: 'mysql',
-    host: process.env.DB_HOST,
-    port: Number(process.env.DB_PORT),
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
+import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
+const dns = new URL(process.env.DB_URL);
+const config: PostgresConnectionOptions = {
+    type: "postgres",
+    host: dns.hostname,
+    port: Number(dns.port),
+    username: dns.username,
+    password: dns.password,
+    database: dns.pathname,
     entities: [
         __dirname + 'src/**/*.entity{.ts,.js}'
     ],

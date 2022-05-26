@@ -1,3 +1,3 @@
-import { MysqlConnectionOptions } from "typeorm/driver/mysql/MysqlConnectionOptions";
-declare const config: MysqlConnectionOptions;
+import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
+declare const config: PostgresConnectionOptions;
 export default config;
