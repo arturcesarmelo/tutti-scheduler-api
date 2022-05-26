@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const dns = new URL(process.env.DB_URL);
+const dns = new URL(process.env.DATABASE_URL);
 const config = {
     type: "postgres",
     host: dns.hostname,

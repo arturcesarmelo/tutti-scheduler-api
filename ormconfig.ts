@@ -1,5 +1,5 @@
 import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
-const dns = new URL(process.env.DB_URL);
+const dns = new URL(process.env.DATABASE_URL);
 const config: PostgresConnectionOptions = {
     type: "postgres",
     host: dns.hostname,
